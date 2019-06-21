@@ -101,7 +101,7 @@
 						<div class="row justify-content-center">
 							<div class="col-xs-auto">
 								<div class="park-ttl clearfix">
-									<h3 class="park-ttl__name">наш Автопарк</h3>
+									<h3 class="park-ttl__name">наш Автопарк:</h3>
 									<span class="park-ttl__note">Our vehicle<br>fleet</span>
 								</div>
 							</div>
@@ -253,7 +253,7 @@
 							<h3 class="capability-ttl__name">Наши возможности</h3>
 							<span class="capability-ttl__note">our directions</span>
 						</div>
-						<p class="capability-txt">Мы торговый дом ВЕРОМ, компания, которая объединила в себе 3 собственных Завода ЖБИ. Мы предоставляем полный перечень товаров и услуг, от изготовлений изделий из железобетона и металла, до аренды спецтехники, что позволит Вам найти надежного партнёра и решить все задачи по строительству.<br><br>Наш автопарк насчитывает 35 единиц техники, которые своевременно доставят груз к Вам на объект. Это позволит добиться большой экономии на логистике, и значительно снизить общую стоимость товара для Вас. Все ЖБИ вы можете забрать самостоятельно в Киев с завода, либо мы привезём ЖБИ по Украине за 1 день.<br><br>Мы имеем собственный автопарк в который входят : Манипуляторы, Спецтехника типа JCB, тягачи 10 и 20 т, самосвалы, миксера, которые решат все ваши задачи при строительстве.</p>
+						<p class="capability-txt">Мы торговый дом VEROM - компания, которая объединила в себе 3 собственных завода ЖБИ. Мы предоставляем полный перечень товаров и услуг, от изготовления изделий из железобетона и металла, до аренды спецтехники, что позволит Вам найти надежного партнёра и решить все задачи по строительству.<br><br>Наш автопарк насчитывает 35 единиц техники, которые своевременно доставят груз к Вам на объект. Это позволит добиться большой экономии на логистике, и значительно снизить общую стоимость товара для Вас. Все ЖБИ вы можете забрать самостоятельно в Киев с завода, либо мы привезём ЖБИ по Украине за 1 день.<br><br>Мы имеем собственный автопарк в который входят : Манипуляторы, Спецтехника типа JCB, тягачи 10 и 20 т., самосвалы, миксера, которые решат все ваши задачи при строительстве.</p>
 						<a href="#form" class="capability-btn fancybox">Просчет стоимости</a>
 					</div>
 					<div class="col-md-6">
@@ -271,11 +271,50 @@
 							<h3 class="about-ttl__name">о нас</h3>
 							<span class="about-ttl__note">about us</span>
 						</div>
-						<p class="about-txt">Завод VEROM- Вся наша продукция соответствуют стандартам ГОСТ и ДСТУ.<br><br>Сотрудники нашей компании помогут Арендовать спецтехнику, подобрать необходимый вид транспорта, провести необходимые расчеты, и правильно оформить всю сопроводительную документацию.<br><br>Наши клиенты оценят скорость просчёта, качество техники и её наименование.<br><br>Мы решаем задачи, которые непосильны другим! С нами застройщик экономит квадратные метры, ускоряет процес строительства и экономитденьги.</p>
+						<p class="about-txt">Завод VEROM- Вся наша продукция соответствуют стандартам ГОСТ и ДСТУ.<br><br>Сотрудники нашей компании помогут арендовать спецтехнику, подобрать необходимый вид транспорта, провести необходимые расчеты, и правильно оформить всю сопроводительную документацию.<br><br>Наши клиенты оценят скорость расчета стоимости, качество техники и её наименование.<br><br>Мы решаем задачи, которые непосильны другим! С нами застройщик экономит квадратные метры, ускоряет процес строительства и экономит деньги.</p>
 						<a href="#consalt" class="about-btn fancybox">Получить консультацию</a>
 					</div>
 					<div class="col-lg-6 col-md-6 offset-lg-1  order-md-1">
 						<img src="img/video_avtopark.jpg" alt="verom" class="about-video">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="gallery gallery_steel">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-xs-auto gallery-ttl">
+						<h3 class="gallery-ttl__name">Галерея</h3>
+						<span class="gallery-ttl__note">gallery</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="gallery-slider">
+							@if(!empty($galleries['images']))
+								@foreach($galleries['images'] as $item)
+									<div class="gallery-slider__slide">
+										<div>
+											<a href="{{ $item }}" class="fancybox" data-fancybox="gallery">
+												<img src="{{ '/images/uploads/small/'.basename($item) }}" alt="verom">
+											</a>
+										</div>
+									</div>
+								@endforeach
+							@endif
+						</div>
+					</div>
+				</div>
+				<div class="row align-items-center justify-content-between">
+					<div class="col-md-1 col-2">
+						<div class="gallery-slider__arrow gallery-slider__arrow-prev"></div>
+					</div>
+					<!-- <div class="col-md-10 col-8">
+						<div class="gallery-slider__dots"></div>
+					</div> -->
+					<div class="col-md-1 col-2">
+						<div class="gallery-slider__arrow gallery-slider__arrow-next"></div>
 					</div>
 				</div>
 			</div>

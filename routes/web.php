@@ -36,6 +36,7 @@
     Route::get('/avtopark', function () {
         return view('avtopark', [
             'contacts' => \App\Contacts::find(1),
+            'galleries' => \App\Galleries::find(4),
             'controller' => new \App\Http\Controllers\AvtoparkController()
         ]);
     });
