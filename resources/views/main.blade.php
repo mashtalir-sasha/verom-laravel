@@ -63,7 +63,7 @@
 			<div class="container">
 				<div class="row align-items-center align-items-sm-start">
 					<div class="col-lg-3 col-md-2 col-sm-3 col-6">
-						<img src="img/logo.svg" alt="Verom" class="nav-logo">
+						<img src="img/logo.png" alt="Verom" class="nav-logo">
 					</div>
 					<div class="col-6 d-block d-sm-none">
 						<div class="mob-mnu__link">
@@ -121,21 +121,21 @@
 						<div class="row">
 							<div class="col-sm-4">
 								<div class="directions-img">
-									<a href="jbi"><img src="img/directions_img1.gif" alt="verom"></a>
+									<a href="jbi"><img src="img/blank.gif" data-src="img/directions_img1.gif" alt="verom"></a>
 								</div>
 								<h3 class="directions-item__ttl"><span>01 /</span> Изделия ЖБИ</h3>
 								<a href="jbi" class="directions-item__btn">Подробнее</a>
 							</div>
 							<div class="col-sm-4">
 								<div class="directions-img">
-									<a href="avtopark"><img src="img/directions_img2.gif" alt="verom"></a>
+									<a href="avtopark"><img src="img/blank.gif" data-src="img/directions_img2.gif" alt="verom"></a>
 								</div>
 								<h3 class="directions-item__ttl"><span>02 /</span> Аренда спецтехники</h3>
 								<a href="avtopark" class="directions-item__btn">Подробнее</a>
 							</div>
 							<div class="col-sm-4">
 								<div class="directions-img">
-									<a href="steel"><img src="img/directions_img3.gif" alt="verom"></a>
+									<a href="steel"><img src="img/blank.gif" data-src="img/directions_img3.gif" alt="verom"></a>
 								</div>
 								<h3 class="directions-item__ttl"><span>03 /</span> Изделия из металла</h3>
 								<a href="steel" class="directions-item__btn last">Подробнее</a>

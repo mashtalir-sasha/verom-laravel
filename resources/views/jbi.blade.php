@@ -63,7 +63,7 @@
 			<div class="container">
 				<div class="row align-items-center align-items-sm-start">
 					<div class="col-lg-3 col-md-2 col-sm-3 col-6">
-						<img src="img/logo.svg" alt="Verom" class="nav-logo">
+						<img src="img/logo.png" alt="Verom" class="nav-logo">
 					</div>
 					<div class="col-6 d-block d-sm-none">
 						<div class="mob-mnu__link">
