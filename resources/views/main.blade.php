@@ -17,9 +17,20 @@
 	<link rel="icon" href="img/favicon/favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
 	<meta name="theme-color" content="#000">
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-NZQSDZV');</script>
+	<!-- End Google Tag Manager -->
 </head>
 
 <body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZQSDZV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 
 	<nav class="mob-mnu d-block d-sm-none">
 		<div class="mob-mnu__close">
@@ -86,7 +97,7 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-md-4">
-						<img src="img/head_ttl.svg" alt="verom" class="head-img">
+						<img src="img/head_ttl.svg" alt="verom" class="head-img d-none d-md-block">
 						<h1 class="head-ttl">С нами строят будущее!</h1>
 						<h2 class="head-subttl">Из железобетонных изделий и металла.</h2>
 					</div>
@@ -119,7 +130,7 @@
 								<div class="directions-img">
 									<a href="avtopark"><img src="img/directions_img2.gif" alt="verom"></a>
 								</div>
-								<h3 class="directions-item__ttl"><span>02 /</span> Аренда спец техники</h3>
+								<h3 class="directions-item__ttl"><span>02 /</span> Аренда спецтехники</h3>
 								<a href="avtopark" class="directions-item__btn">Подробнее</a>
 							</div>
 							<div class="col-sm-4">
@@ -145,13 +156,13 @@
 				</div>
 				<div class="row">
 					<div class="col-md-4">
-						<p class="opportunities-txt">Мы <span>торговый дом ВЕРОМ</span> - компания, которая объединила в себе 3 собственных завода ЖБИ. Мы предоставляем полный перечень товаров и услуг, от изготовления изделий из железобетона и металла, до аренды спец.техники, что позволит Вам найти надежного партнёра и решить все задачи по строительству.<br><br>За счет большого объема изготавливаемой собственной продукции, мы имеем самые низкие цены. И тем самым, мы гарантируем отгрузку заказов любого масштаба в кратчайшие сроки, за счёт собственного автопарка.<br><br>Это позволит добиться большой экономии на логистике и значительно снизить общую стоимость товара для Вас. Все изделия вы можете забрать самостоятельно с нашего завода ЖБИ в Киеве, либо мы доставим ЖБИ по Украине за 1 день.</p>
+						<p class="opportunities-txt">Мы <span>торговый дом ВЕРОМ</span> - компания, которая объединила в себе 3 собственных завода ЖБИ. Мы предоставляем полный перечень товаров и услуг, от изготовления изделий из железобетона и металла, до аренды спецтехники, что позволит Вам найти надежного партнёра и решить все задачи по строительству.<br><br>За счет большого объема изготавливаемой собственной продукции, мы имеем самые низкие цены. И тем самым, мы гарантируем отгрузку заказов любого масштаба в кратчайшие сроки, за счёт собственного автопарка.<br><br>Это позволит добиться большой экономии на логистике и значительно снизить общую стоимость товара для Вас. Все изделия Вы можете забрать самостоятельно с нашего завода ЖБИ в Киеве, либо мы доставим ЖБИ по Украине за 1 день.</p>
 					</div>
 					<div class="col-md-4">
 						<img src="img/opportunities_img.svg" alt="verom" class="opportunities-img">
 					</div>
 					<div class="col-md-4">
-						<p class="opportunities-txt">Наши <span>менеджеры - профессионалы</span> своего дела с многолетним опытом работы. Они помогут Вам подобрать все необходимое для вашего объекта и учтут все пожелания при формировании заказа. Выполнение индивидуальных заказов - это наша сильная сторона.<br><br>Также, мы занимаемся изготавлением металлоконструкции и кладочной сетки. Цех металлообработки выполняет работы различной сложности:<br><br>от проведения плазменной и архитектурной резки до изготовления изделий из металла для интерьера по спец. заказу.</p>
+						<p class="opportunities-txt">Наши <span>менеджеры - профессионалы</span> своего дела с многолетним опытом работы. Они помогут Вам подобрать все необходимое для Вашего объекта и учтут все пожелания при формировании заказа. Выполнение индивидуальных заказов - это наша сильная сторона.<br><br>Также, мы занимаемся изготовлением металлоконструкции и кладочной сетки. Цех металлообработки выполняет работы различной сложности:<br><br>от проведения плазменной и архитектурной резки до изготовления изделий из металла для интерьера по спец. заказу.</p>
 					</div>
 				</div>
 			</div>
@@ -198,7 +209,7 @@
 						<div class="opportunities-items__wrap">
 							<img src="img/opportunities_img3.png" alt="verom" class="opportunities-items__img">
 						</div>
-						<p class="opportunities-items__txt"><span>Аренда спец.техники</span> решит все ваши потребности.</p>
+						<p class="opportunities-items__txt"><span>Аренда спецтехники</span> решит все Ваши потребности.</p>
 						<div class="opportunities-items__dots opportunities-items__dots_bottom anim3">
 							<span></span>
 							<span></span>
@@ -237,7 +248,7 @@
 						<div class="opportunities-items__wrap">
 							<img src="img/opportunities_img5.png" alt="verom" class="opportunities-items__img">
 						</div>
-						<p class="opportunities-items__txt">Нашим заводом было произведено и реализованно больше <span>340.000 ед. продукций.</span></p>
+						<p class="opportunities-items__txt">Нашим заводом было произведено и реализованно больше <span>340.000 ед. продукции.</span></p>
 						<div class="opportunities-items__dots anim4">
 							<span></span>
 							<span></span>
@@ -254,7 +265,7 @@
 						<div class="opportunities-items__wrap">
 							<img src="img/opportunities_img6.png" alt="verom" class="opportunities-items__img">
 						</div>
-						<p class="opportunities-items__txt last">Изготовливаем <span>металлоконструкции и кладочную сетку</span>, плазменная резка металла.</p>
+						<p class="opportunities-items__txt last">Изготовливаем <span>металлоконструкции и кладочную сетку.</span> Осуществляем плазменную резку металла.</p>
 					</div>
 				</div>
 			</div>
@@ -309,13 +320,7 @@
 						<div class="gallery-slider">
 							@if(!empty($galleries['images']))
 								@foreach($galleries['images'] as $item)
-									<div class="gallery-slider__slide">
-										<div>
-											<a href="{{ $item }}" class="fancybox" data-fancybox="gallery">
-												<img src="{{ '/images/uploads/small/'.basename($item) }}" alt="verom">
-											</a>
-										</div>
-									</div>
+									<a href="{{ $item }}" data-fancybox="gallery" class="gallery-slider__slide fancybox" style="background-image: url({{ '/images/uploads/small/'.basename($item) }})"></a>
 								@endforeach
 							@endif
 						</div>
@@ -343,7 +348,7 @@
 							<h3 class="about-ttl__name">о нас</h3>
 							<span class="about-ttl__note">about us</span>
 						</div>
-						<p class="about-txt">Мы предоставляем весь ассортимент товаров и безупречный сервис! Вся наша продукция соответствуют стандартам ГОСТ и ДСТУ. Наши менеджеры помогут вам подобрать ЖБИ по смете и предложить оптимальные изделия, при этом максимально быстро сделать калькуляцию затрат.<br><br>Мы решаем задачи, которые непосильны другим! С нами застройщик экономит квадратные метры, ускоряет процесс строительства и экономит деньги.<br><br>VEROM - Железобетон во всем!</p>
+						<p class="about-txt">Мы предоставляем весь ассортимент товаров и безупречный сервис! Вся наша продукция соответствуют стандартам ГОСТ и ДСТУ. Наши менеджеры помогут Вам подобрать ЖБИ по смете и предложить оптимальные изделия, при этом максимально быстро сделать калькуляцию затрат.<br><br>Мы решаем задачи, которые непосильны другим! С нами застройщик экономит квадратные метры, ускоряет процесс строительства и экономит деньги.<br><br>VEROM - Железобетон во всем!</p>
 						<a href="#consalt" class="about-btn fancybox">Получить консультацию</a>
 					</div>
 					<div class="col-lg-6 col-md-6">

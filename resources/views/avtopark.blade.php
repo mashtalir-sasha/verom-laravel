@@ -17,9 +17,20 @@
 	<link rel="icon" href="img/favicon/favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
 	<meta name="theme-color" content="#000">
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-NZQSDZV');</script>
+	<!-- End Google Tag Manager -->
 </head>
 
 <body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZQSDZV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 
 	<nav class="mob-mnu d-block d-sm-none">
 		<div class="mob-mnu__close">
@@ -251,10 +262,10 @@
 					<div class="col-lg-5 offset-lg-1 col-md-6">
 						<div class="capability-ttl clearfix">
 							<h3 class="capability-ttl__name">Наши возможности</h3>
-							<span class="capability-ttl__note">our directions</span>
+							<span class="capability-ttl__note">our opportunities</span>
 						</div>
-						<p class="capability-txt">Мы торговый дом VEROM - компания, которая объединила в себе 3 собственных завода ЖБИ. Мы предоставляем полный перечень товаров и услуг, от изготовления изделий из железобетона и металла, до аренды спецтехники, что позволит Вам найти надежного партнёра и решить все задачи по строительству.<br><br>Наш автопарк насчитывает 35 единиц техники, которые своевременно доставят груз к Вам на объект. Это позволит добиться большой экономии на логистике, и значительно снизить общую стоимость товара для Вас. Все ЖБИ вы можете забрать самостоятельно в Киев с завода, либо мы привезём ЖБИ по Украине за 1 день.<br><br>Мы имеем собственный автопарк в который входят : Манипуляторы, Спецтехника типа JCB, тягачи 10 и 20 т., самосвалы, миксера, которые решат все ваши задачи при строительстве.</p>
-						<a href="#form" class="capability-btn fancybox">Просчет стоимости</a>
+						<p class="capability-txt">Мы торговый дом VEROM - компания, которая объединила в себе 3 собственных завода ЖБИ. Мы предоставляем полный перечень товаров и услуг, от изготовления изделий из железобетона и металла, до аренды спецтехники, что позволит Вам найти надежного партнёра и решить все задачи по строительству.<br><br>Наш автопарк насчитывает 35 единиц техники, которые своевременно доставят груз к Вам на объект. Это позволит добиться большой экономии на логистике, и значительно снизить общую стоимость товара для Вас. Все ЖБИ вы можете забрать самостоятельно в Киев с завода, либо мы привезём ЖБИ по Украине за 1 день.<br><br>Мы имеем собственный автопарк в который входят: манипуляторы, спецтехника типа JCB, тягачи 10 и 20 т., самосвалы, миксера, которые решат все ваши задачи при строительстве.</p>
+						<a href="#form" class="capability-btn fancybox">Расчет стоимости</a>
 					</div>
 					<div class="col-md-6">
 						<img src="img/capability_img.png" alt="verom" class="capability-img">
@@ -271,7 +282,7 @@
 							<h3 class="about-ttl__name">о нас</h3>
 							<span class="about-ttl__note">about us</span>
 						</div>
-						<p class="about-txt">Завод VEROM- Вся наша продукция соответствуют стандартам ГОСТ и ДСТУ.<br><br>Сотрудники нашей компании помогут арендовать спецтехнику, подобрать необходимый вид транспорта, провести необходимые расчеты, и правильно оформить всю сопроводительную документацию.<br><br>Наши клиенты оценят скорость расчета стоимости, качество техники и её наименование.<br><br>Мы решаем задачи, которые непосильны другим! С нами застройщик экономит квадратные метры, ускоряет процес строительства и экономит деньги.</p>
+						<p class="about-txt">Завод VEROM- Вся наша продукция соответствуют стандартам ГОСТ и ДСТУ.<br><br>Сотрудники нашей компании помогут арендовать спецтехнику, подобрать необходимый вид транспорта, провести необходимые расчеты, и правильно оформить всю сопроводительную документацию.<br><br>Наши клиенты оценят скорость расчета стоимости, качество техники и её наименование.<br><br>Мы решаем задачи, которые непосильны другим! С нами застройщик экономит квадратные метры, ускоряет процесс строительства и экономит деньги.</p>
 						<a href="#consalt" class="about-btn fancybox">Получить консультацию</a>
 					</div>
 					<div class="col-lg-6 col-md-6 offset-lg-1  order-md-1">
@@ -294,13 +305,7 @@
 						<div class="gallery-slider">
 							@if(!empty($galleries['images']))
 								@foreach($galleries['images'] as $item)
-									<div class="gallery-slider__slide">
-										<div>
-											<a href="{{ $item }}" class="fancybox" data-fancybox="gallery">
-												<img src="{{ '/images/uploads/small/'.basename($item) }}" alt="verom">
-											</a>
-										</div>
-									</div>
+									<a href="{{ $item }}" data-fancybox="gallery" class="gallery-slider__slide fancybox" style="background-image: url({{ '/images/uploads/small/'.basename($item) }})"></a>
 								@endforeach
 							@endif
 						</div>
@@ -327,7 +332,7 @@
 		<div id="modal" class="modal">
 			<h3 class="modal-ttl">Оставьте заявку и мы просчитаем Вам стоимость аренды авто</h3>
 			<form class="form_check modal-form">
-				<input type="hidden" name="title" value="Просчет стоимости аренды авто">
+				<input type="hidden" name="title" value="Расчет стоимости аренды авто">
 				<input type="hidden" name="subtitle" class="subttl">
 				<div class="rline">
 					<p>Ваше имя:</p>
@@ -337,14 +342,14 @@
 					<p>Контактный телефон:</p>
 					<input type="text" name="phone" class="rfield modal-form__input">
 				</div>
-				<button type="submit" class="btnsubmit modal-form__btn">Получить просчет</button>
+				<button type="submit" class="btnsubmit modal-form__btn">Просчитать</button>
 			</form>
 		</div>
 
 		<div id="form" class="modal">
 			<h3 class="modal-ttl">Оставьте заявку и мы просчитаем Вам стоимость аренды авто</h3>
 			<form class="form_check modal-form">
-				<input type="hidden" name="title" value="Просчет стоимости аренды авто">
+				<input type="hidden" name="title" value="Расчет стоимости аренды авто">
 				<div class="rline">
 					<p>Ваше имя:</p>
 					<input type="text" name="name" class="rfield modal-form__input">
@@ -353,7 +358,7 @@
 					<p>Контактный телефон:</p>
 					<input type="text" name="phone" class="rfield modal-form__input">
 				</div>
-				<button type="submit" class="btnsubmit modal-form__btn">Получить просчет</button>
+				<button type="submit" class="btnsubmit modal-form__btn">Просчитать</button>
 			</form>
 		</div>
 
