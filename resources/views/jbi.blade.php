@@ -95,12 +95,12 @@
 			</div>
 		</nav>
 
-		<header class="head-jbi">
+		<header class="head-jbi menuFixed">
 			<div class="container">
 				<div class="row">
 					<div class="col offset-md-3">
 						<h1 class="head-jbi__ttl">ЖБИ Украина - Мы заботимся о том,<br>сколько столетий выдержат ваши дома!</h1>
-						<a href="#consalt" class="head-jbi__btn fancybox">Подробнее</a>
+						<a href="#consalt" class="head-jbi__btn fancybox">Отправить заявку</a>
 					</div>
 				</div>
 			</div>

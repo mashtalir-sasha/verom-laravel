@@ -67,7 +67,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-2 col-sm-4 col-6">
-				<img src="/img/logo_white.svg" alt="Verom" class="foot-logo">
+				<img src="/img/logo-white.png" alt="Verom" class="foot-logo">
 			</div>
 			<div class="col-md-2 col-sm-4 col-6 align-self-center align-self-sm-start">
 				<a href="/" class="foot-main">Главная</a>

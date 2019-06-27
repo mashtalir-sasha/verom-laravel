@@ -95,11 +95,11 @@
 			</div>
 		</nav>
 
-		<header class="head">
+		<header class="head menuFixed">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-md-4">
-						<img src="img/head_ttl.svg" alt="verom" class="head-img d-none d-md-block">
+						<img src="img/head_ttl.png" alt="verom" class="head-img d-none d-md-block">
 						<h1 class="head-ttl">С нами строят будущее!</h1>
 						<h2 class="head-subttl">Из железобетонных изделий и металла.</h2>
 					</div>

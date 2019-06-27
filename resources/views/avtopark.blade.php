@@ -95,12 +95,12 @@
 			</div>
 		</nav>
 
-		<header class="avtopark">
+		<header class="avtopark menuFixed">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-xl-5 offset-xl-1">
 						<h1 class="avtopark-ttl">Полный выбор спецтехники<br>под различные задачи в<br>строительстве</h1>
-						<a href="#consalt" class="avtopark-btn fancybox">Подробнее</a>
+						<a href="#consalt" class="avtopark-btn fancybox">Отправить заявку</a>
 					</div>
 				</div>
 			</div>

@@ -95,12 +95,12 @@
 			</div>
 		</nav>
 
-		<header class="steel">
+		<header class="steel menuFixed">
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-7 offset-md-3">
 						<h1 class="steel-ttl">Изделия из металла - придадим формы и изготовим любые типовые изделия по вашему индивидуальному заказу!</h1>
-						<a href="#consalt" class="steel-btn fancybox">Подробнее</a>
+						<a href="#consalt" class="steel-btn fancybox">Отправить заявку</a>
 					</div>
 				</div>
 			</div>

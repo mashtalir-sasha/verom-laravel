@@ -95,17 +95,17 @@
 			</div>
 		</nav>
 
-		<section class="cart">
+		<section class="cart menuFixed">
 			<div class="container">
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-xs-auto offset-xl-1 cart-ttl clearfix">
 						<h3 class="cart-ttl__name">Описание товаров</h3>
 						<span class="cart-ttl__note"></span>
 					</div>
-				</div>
+				</div> -->
 				<div class="row">
 					<div class="col-md-6">
-						<h3 class="cart-item__ttl">{{ $item['name'] }}</h3>
+						<!-- <h3 class="cart-item__ttl">{{ $item['name'] }}</h3> -->
 						<div class="cart-item__img">
 							<img src="/{{ $item['image'] }}" alt="verom">
 						</div>
