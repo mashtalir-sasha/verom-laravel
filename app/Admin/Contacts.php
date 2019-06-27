@@ -23,11 +23,20 @@ AdminSection::registerModel(Contacts::class, function (ModelConfiguration $model
         $form = AdminForm::panel();
         $form->setHtmlAttribute('enctype', 'multipart/form-data');
 
+        $tabs = AdminDisplay::tabbed([
+            'Русский' => new \SleepingOwl\Admin\Form\FormElements([
+                AdminFormElement::text('addr', 'Адрес')->required(),
+            ]),
+            'Українська' => new \SleepingOwl\Admin\Form\FormElements([
+                AdminFormElement::text('addrUkr', 'Адреса')->required(),
+            ]),
+        ]);
+
         $form->addBody([
             AdminFormElement::columns()
-                ->addColumn(function () {
+                ->addColumn(function () use ($tabs) {
                     return [
-                        AdminFormElement::text('addr', 'Адрес')->required(),
+                        $tabs,
                         AdminFormElement::text('mail', 'Email')->required(),
                         AdminFormElement::text('facebook', 'Facebook'),
                         AdminFormElement::text('youtube', 'YouTube'),

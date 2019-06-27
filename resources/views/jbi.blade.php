@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="ru">
+@if (App::isLocale('ru'))
+	<html lang="ru">
+@elseif (App::isLocale('uk'))
+	<html lang="uk">
+@endif
 
 <head>
 	<meta charset="utf-8">
-	<title>Завод ЖБИ | Verom - Киевский Завод ЖБИ</title>
-	<meta name="description" content="ЖБИ Киев - производим плиты перекрытия, бетонные кольца колодцев, бетонные заборы, фундаментные блоки и другие изделия из железобетона.">
+	<title>{{ trans('jbi.title') }}</title>
+	<meta name="description" content="{{ trans('jbi.description') }}">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!--
@@ -14,8 +18,8 @@
 	<meta property="og:url" content="">
 	<meta property="og:image" content=""/>
 	-->
-	<link rel="icon" href="img/favicon/favicon.ico">
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<link rel="icon" href="/img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-180x180.png">
 	<meta name="theme-color" content="#000">
 
 	<!-- Google Tag Manager -->
@@ -34,16 +38,16 @@
 
 	<nav class="mob-mnu d-block d-sm-none">
 		<div class="mob-mnu__close">
-			<img src="img/cancel.svg" width="24" height="24" alt="verom">
+			<img src="/img/cancel.svg" width="24" height="24" alt="verom">
 		</div>
 		<div class="mob-mnu__center">
 			<div class="mob-mnu__content">
 				<ul class="mob-mnu-list">
-					<li class="mob-mnu-list__item"><a href="/">Главная</a></li>
-					<li class="mob-mnu-list__item"><a href="#" class="active">Завод ЖБИ</a></li>
-					<li class="mob-mnu-list__item"><a href="steel">Изделия из металла</a></li>
-					<li class="mob-mnu-list__item"><a href="avtopark">Аренда техники</a></li>
-					<li class="mob-mnu-list__item"><a href="#contacts" class="anchor">Контакты</a></li>
+					<li class="mob-mnu-list__item"><a href="{{ localization()->getLocalizedURL(null, '/') }}">{{ trans('main.menu1') }}</a></li>
+					<li class="mob-mnu-list__item"><a href="#" class="active">{{ trans('main.menu2') }}</a></li>
+					<li class="mob-mnu-list__item"><a href="{{ localization()->getLocalizedURL(null, 'steel') }}">{{ trans('main.menu3') }}</a></li>
+					<li class="mob-mnu-list__item"><a href="{{ localization()->getLocalizedURL(null, 'avtopark') }}">{{ trans('main.menu4') }}</a></li>
+					<li class="mob-mnu-list__item"><a href="#contacts" class="anchor">{{ trans('main.menu5') }}</a></li>
 				</ul>
 			</div>
 		</div>
@@ -52,8 +56,13 @@
 				<a href="tel:+38{{ preg_replace('~[^0-9]~','',$contacts['phone-top']) }}" class="mob-mnu-phone">+38 {{ $contacts['phone-top'] }}</a>
 			@endif
 			<div class="mob-mnu-lang">
-				<a href="#" class="nav-lang__link active">Рус</a>
-				<a href="#" class="nav-lang__link">Укр</a>
+				@if (App::isLocale('ru'))
+					<a href="#" class="nav-lang__link active">Рус</a>
+					<a href="/jbi" class="nav-lang__link">Укр</a>
+				@elseif (App::isLocale('uk'))
+					<a href="/ru/jbi" class="nav-lang__link">Рус</a>
+					<a href="#" class="nav-lang__link active">Укр</a>
+				@endif
 			</div>
 		</div>
 	</nav>
@@ -63,23 +72,23 @@
 			<div class="container">
 				<div class="row align-items-center align-items-sm-start">
 					<div class="col-lg-3 col-md-2 col-sm-3 col-6">
-						<a href="/">
-							<img src="img/logo.png" alt="Verom" class="nav-logo">
+						<a href="{{ localization()->getLocalizedURL(null, '/') }}">
+							<img src="/img/logo.png" alt="Verom" class="nav-logo">
 						</a>
 					</div>
 					<div class="col-6 d-block d-sm-none">
 						<div class="mob-mnu__link">
 							<span>Меню</span>
-							<img src="img/menu.svg" width="32" height="32" alt="verom">
+							<img src="/img/menu.svg" width="32" height="32" alt="verom">
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-7 col-sm-9 col-6 d-none d-sm-block">
 						<ul class="nav-list">
-							<li class="nav-list__item"><a href="/">Главная</a></li>
-							<li class="nav-list__item"><a href="#" class="active">Завод ЖБИ</a></li>
-							<li class="nav-list__item"><a href="steel">Изделия из металла</a></li>
-							<li class="nav-list__item"><a href="avtopark">Аренда техники</a></li>
-							<li class="nav-list__item"><a href="#contacts" class="anchor">Контакты</a></li>
+							<li class="nav-list__item"><a href="{{ localization()->getLocalizedURL(null, '/') }}">{{ trans('main.menu1') }}</a></li>
+							<li class="nav-list__item"><a href="#" class="active">{{ trans('main.menu2') }}</a></li>
+							<li class="nav-list__item"><a href="{{ localization()->getLocalizedURL(null, 'steel') }}">{{ trans('main.menu3') }}</a></li>
+							<li class="nav-list__item"><a href="{{ localization()->getLocalizedURL(null, 'avtopark') }}">{{ trans('main.menu4') }}</a></li>
+							<li class="nav-list__item"><a href="#contacts" class="anchor">{{ trans('main.menu5') }}</a></li>
 						</ul>
 					</div>
 					<div class="col-md-3 col-sm-4 offset-sm-8 offset-md-0 mt80 d-none d-sm-block">
@@ -87,8 +96,13 @@
 							<a href="tel:+38{{ preg_replace('~[^0-9]~','',$contacts['phone-top']) }}" class="nav-phone">+38 {{ $contacts['phone-top'] }}</a>
 						@endif
 						<div class="nav-lang">
-							<a href="#" class="nav-lang__link active">Рус</a>
-							<a href="#" class="nav-lang__link">Укр</a>
+							@if (App::isLocale('ru'))
+								<a href="#" class="nav-lang__link active">Рус</a>
+								<a href="/jbi" class="nav-lang__link">Укр</a>
+							@elseif (App::isLocale('uk'))
+								<a href="/ru/jbi" class="nav-lang__link">Рус</a>
+								<a href="#" class="nav-lang__link active">Укр</a>
+							@endif
 						</div>
 					</div>
 				</div>
@@ -99,19 +113,19 @@
 			<div class="container">
 				<div class="row">
 					<div class="col offset-md-3">
-						<h1 class="head-jbi__ttl">ЖБИ Украина - Мы заботимся о том,<br>сколько столетий выдержат ваши дома!</h1>
-						<a href="#consalt" class="head-jbi__btn fancybox">Отправить заявку</a>
+						<h1 class="head-jbi__ttl">{!! trans('jbi.head-ttl') !!}</h1>
+						<a href="#consalt" class="head-jbi__btn fancybox">{{ trans('jbi.head-btn') }}</a>
 					</div>
 				</div>
 			</div>
 		</header>
-		<img src="img/jbi_bg_xs.png" alt="verom" class="d-block d-md-none xs-bg">
+		<img src="/img/jbi_bg_xs.png" alt="verom" class="d-block d-md-none xs-bg">
 
 		<section class="jbi">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-auto offset-xl-1 jbi-ttl clearfix">
-						<h3 class="jbi-ttl__name">ЖБИ изделия</h3>
+						<h3 class="jbi-ttl__name">{{ trans('jbi.catalog-ttl') }}</h3>
 						<span class="jbi-ttl__note"></span>
 					</div>
 				</div>
@@ -121,11 +135,18 @@
 							@foreach ($catalog as $item)
 								<div class="col-md-3 col-sm-6">
 									<div class="jbi-item">
-										<div class="jbi-item__ttl"><span>{{ $item['numb'] }} /</span>{{ $item['name'] }}</div>
+										<div class="jbi-item__ttl">
+											<span>{{ $item['numb'] }} /</span>
+											@if (App::isLocale('ru'))
+												{{ $item['name'] }}
+											@elseif (App::isLocale('uk'))
+												{{ $item['nameUkr'] }}
+											@endif
+										</div>
 										<div class="jbi-item__img">
 											<img src="{{ '/images/uploads/small/'.basename($item['image']) }}" alt="verom">
 										</div>
-										<a href="/jbi/{{ $item['id'] }}" class="jbi-item__btn">Весь каталог и расчет</a>
+										<a href="{{ localization()->getLocalizedURL(null, 'jbi') }}/{{ $item['id'] }}" class="jbi-item__btn">{{ trans('jbi.catalog-btn') }}</a>
 									</div>
 								</div>
 							@endforeach
@@ -137,11 +158,18 @@
 						@foreach ($catalog as $item)
 							<div class="col">
 								<div class="jbi-item">
-									<div class="jbi-item__ttl"><span>{{ $item['numb'] }} /</span>{{ $item['name'] }}</div>
+									<div class="jbi-item__ttl">
+										<span>{{ $item['numb'] }} /</span>
+										@if (App::isLocale('ru'))
+											{{ $item['name'] }}
+										@elseif (App::isLocale('uk'))
+											{{ $item['nameUkr'] }}
+										@endif
+									</div>
 									<div class="jbi-item__img">
 										<img src="{{ '/images/uploads/small/'.basename($item['image']) }}" alt="verom">
 									</div>
-									<a href="/jbi/{{ $item['id'] }}" class="jbi-item__btn">Весь каталог и расчет</a>
+									<a href="{{ localization()->getLocalizedURL(null, 'jbi') }}/{{ $item['id'] }}" class="jbi-item__btn">{{ trans('jbi.catalog-btn') }}</a>
 								</div>
 							</div>
 						@endforeach
@@ -154,15 +182,15 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-5 col-md-6">
-						<img src="img/individ.png" alt="verom" class="individ-img">
+						<img src="/img/individ.png" alt="verom" class="individ-img">
 					</div>
 					<div class="col-lg-6 offset-lg-1 col-md-6">
 						<div class="individ-ttl clearfix">
-							<h3 class="individ-ttl__name">Индивидуальные ЖБИ</h3>
+							<h3 class="individ-ttl__name">{{ trans('jbi.individ-ttl') }}</h3>
 							<span class="individ-ttl__note">individual<br>concrete</span>
 						</div>
 						<p class="individ-txt">
-							Мы торговый дом. Торговая компания, которая имеет три собственных ЖБИ завода.<br><br>Наш завод может сделать любое изделие из железобетона. За счет наличия собственного металлоцеха у нас есть возможность делать опалубочную систему любой сложности, и производить изделия любых форм железобетонных конструкций.<br><br>Каждый месяц мы изготавливаем более 12 000 товаров, что позволяет решать любую задачу клиента с минимальными затратами.<br><br>Все наши сотрудники - профессионалы своего дела с многолетним опытом работы. Они помогут Вам подобрать все необходимое для вашего объекта и учтут все пожелания при формировании заказа. Мы гарантируем отгрузку заказов любого масштаба в кратчайшие сроки.
+							{!! trans('jbi.individ-txt') !!}
 						</p>
 					</div>
 				</div>
@@ -174,24 +202,24 @@
 				<div class="row align-items-center">
 					<div class="col-lg-4 offset-lg-1 col-md-6">
 						<div class="about-ttl">
-							<h3 class="about-ttl__name">о ЖБИ</h3>
+							<h3 class="about-ttl__name">{{ trans('jbi.about-ttl') }}</h3>
 							<span class="about-ttl__note">about us</span>
 						</div>
-						<p class="about-txt">Наша компания всегда заботиться о том, что важно клиентам. Вся наша продукция соответствуют стандартам ГОСТ и ДСТУ. Наши клиенты оценят скорость подсчета, качество изделий, наименование и скорость изготовления.<br><br>Мы решаем задачи, которые непосильны другим! С нами застройщик экономит квадратные метры, ускоряет процесс строительства. Товар на складе в больших объемах. Вы найдёте в нашем лице надежного партнёра на которого можно положиться!</p>
-						<a href="#consalt" class="about-btn fancybox">Получить консультацию</a>
+						<p class="about-txt">{!! trans('jbi.about-txt') !!}</p>
+						<a href="#consalt" class="about-btn fancybox">{{ trans('jbi.about-btn') }}</a>
 					</div>
 					<div class="col-lg-6 col-md-6">
-						<img src="img/video_jbi.jpg" alt="verom">
+						<img src="/img/video_jbi.jpg" alt="verom">
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="gallery gallery_jbi">
+		<section class="gallery gallery_jbi" id="gallery">
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-xs-auto gallery-ttl">
-						<h3 class="gallery-ttl__name">Галерея</h3>
+						<h3 class="gallery-ttl__name">{{ trans('jbi.gallery-ttl') }}</h3>
 						<span class="gallery-ttl__note">gallery</span>
 					</div>
 				</div>
@@ -225,24 +253,28 @@
 
 	<div class="d-none">
 		<div id="consalt" class="modal">
-			<h3 class="modal-ttl">Оставьте заявку и наш менеджер предоставит Вам полную информацию</h3>
+			<h3 class="modal-ttl">{{ trans('main.mainModal-ttl') }}</h3>
 			<form class="form_check modal-form">
 				<input type="hidden" name="title" value="Получить консультацию">
 				<div class="rline">
-					<p>Ваше имя:</p>
+					<p>{{ trans('main.form-name') }}</p>
 					<input type="text" name="name" class="rfield modal-form__input">
 				</div>
 				<div class="rline">
-					<p>Контактный телефон:</p>
+					<p>{{ trans('main.form-phone') }}</p>
 					<input type="text" name="phone" class="rfield modal-form__input">
 				</div>
-				<button type="submit" class="btnsubmit modal-form__btn">Получить консультацию</button>
+				<button type="submit" class="btnsubmit modal-form__btn">{{ trans('main.mainModal-btn') }}</button>
 			</form>
 		</div>
 	</div>	
 
-	<link rel="stylesheet" href="css/main.min.css">
-	<script src="js/scripts.min.js"></script>
+	<link rel="stylesheet" href="/css/main.min.css">
+	@if (App::isLocale('ru'))
+		<script src="/js/scripts.min.js"></script>
+	@elseif (App::isLocale('uk'))
+		<script src="/js/scripts-ukr.min.js"></script>
+	@endif
 
 </body>
 </html>

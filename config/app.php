@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'uk',
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'uk',
 
     /*
     |--------------------------------------------------------------------------
@@ -183,6 +183,8 @@ return [
         SleepingOwl\Admin\Providers\SleepingOwlServiceProvider::class,
 
         Intervention\Image\ImageServiceProvider::class,
+
+        Arcanedev\Localization\LocalizationServiceProvider::class,
 
     ],
 

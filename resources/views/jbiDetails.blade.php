@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="ru">
+@if (App::isLocale('ru'))
+	<html lang="ru">
+@elseif (App::isLocale('uk'))
+	<html lang="uk">
+@endif
+
 
 <head>
 	<meta charset="utf-8">
-	<title>{{ $item['name'] }} | Verom - Киевский Завод ЖБИ</title>
-	<meta name="description" content="ЖБИ Киев - производим плиты перекрытия, бетонные кольца колодцев, бетонные заборы, фундаментные блоки и другие изделия из железобетона.">
+	<title>{{ $item['name'] }} | {{ trans('cart.title') }}</title>
+	<meta name="description" content="{{ trans('cart.description') }}">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!--
@@ -39,11 +44,11 @@
 		<div class="mob-mnu__center">
 			<div class="mob-mnu__content">
 				<ul class="mob-mnu-list">
-					<li class="mob-mnu-list__item"><a href="/">Главная</a></li>
-					<li class="mob-mnu-list__item"><a href="/jbi">Завод ЖБИ</a></li>
-					<li class="mob-mnu-list__item"><a href="/steel">Изделия из металла</a></li>
-					<li class="mob-mnu-list__item"><a href="/avtopark">Аренда техники</a></li>
-					<li class="mob-mnu-list__item"><a href="#contacts" class="anchor">Контакты</a></li>
+					<li class="mob-mnu-list__item"><a href="{{ localization()->getLocalizedURL(null, '/') }}">{{ trans('main.menu1') }}</a></li>
+					<li class="mob-mnu-list__item"><a href="{{ localization()->getLocalizedURL(null, 'jbi') }}">{{ trans('main.menu2') }}</a></li>
+					<li class="mob-mnu-list__item"><a href="{{ localization()->getLocalizedURL(null, 'steel') }}">{{ trans('main.menu3') }}</a></li>
+					<li class="mob-mnu-list__item"><a href="{{ localization()->getLocalizedURL(null, 'avtopark') }}">{{ trans('main.menu4') }}</a></li>
+					<li class="mob-mnu-list__item"><a href="#contacts" class="anchor">{{ trans('main.menu5') }}</a></li>
 				</ul>
 			</div>
 		</div>
@@ -52,8 +57,13 @@
 				<a href="tel:+38{{ preg_replace('~[^0-9]~','',$contacts['phone-top']) }}" class="mob-mnu-phone">+38 {{ $contacts['phone-top'] }}</a>
 			@endif
 			<div class="mob-mnu-lang">
-				<a href="#" class="nav-lang__link active">Рус</a>
-				<a href="#" class="nav-lang__link">Укр</a>
+				@if (App::isLocale('ru'))
+					<a href="#" class="nav-lang__link active">Рус</a>
+					<a href="/jbi/{{ $item['id'] }}" class="nav-lang__link">Укр</a>
+				@elseif (App::isLocale('uk'))
+					<a href="/ru/jbi/{{ $item['id'] }}" class="nav-lang__link">Рус</a>
+					<a href="#" class="nav-lang__link active">Укр</a>
+				@endif
 			</div>
 		</div>
 	</nav>
@@ -75,11 +85,11 @@
 					</div>
 					<div class="col-lg-6 col-md-7 col-sm-9 col-6 d-none d-sm-block">
 						<ul class="nav-list">
-							<li class="nav-list__item"><a href="/">Главная</a></li>
-							<li class="nav-list__item"><a href="/jbi">Завод ЖБИ</a></li>
-							<li class="nav-list__item"><a href="/steel">Изделия из металла</a></li>
-							<li class="nav-list__item"><a href="/avtopark">Аренда техники</a></li>
-							<li class="nav-list__item"><a href="#contacts" class="anchor">Контакты</a></li>
+							<li class="nav-list__item"><a href="{{ localization()->getLocalizedURL(null, '/') }}">{{ trans('main.menu1') }}</a></li>
+							<li class="nav-list__item"><a href="{{ localization()->getLocalizedURL(null, 'jbi') }}">{{ trans('main.menu2') }}</a></li>
+							<li class="nav-list__item"><a href="{{ localization()->getLocalizedURL(null, 'steel') }}">{{ trans('main.menu3') }}</a></li>
+							<li class="nav-list__item"><a href="{{ localization()->getLocalizedURL(null, 'avtopark') }}">{{ trans('main.menu4') }}</a></li>
+							<li class="nav-list__item"><a href="#contacts" class="anchor">{{ trans('main.menu5') }}</a></li>
 						</ul>
 					</div>
 					<div class="col-md-3 col-sm-4 offset-sm-8 offset-md-0 mt80 d-none d-sm-block">
@@ -87,8 +97,13 @@
 							<a href="tel:+38{{ preg_replace('~[^0-9]~','',$contacts['phone-top']) }}" class="nav-phone">+38 {{ $contacts['phone-top'] }}</a>
 						@endif
 						<div class="nav-lang">
-							<a href="#" class="nav-lang__link active">Рус</a>
-							<a href="#" class="nav-lang__link">Укр</a>
+							@if (App::isLocale('ru'))
+								<a href="#" class="nav-lang__link active">Рус</a>
+								<a href="/jbi/{{ $item['id'] }}" class="nav-lang__link">Укр</a>
+							@elseif (App::isLocale('uk'))
+								<a href="/ru/jbi/{{ $item['id'] }}" class="nav-lang__link">Рус</a>
+								<a href="#" class="nav-lang__link active">Укр</a>
+							@endif
 						</div>
 					</div>
 				</div>
@@ -112,17 +127,33 @@
 					</div>
 					<div class="col-md-6">
 						<div class="cart-item">
-							<h4 class="cart-item__subttl">{{ $item['name'] }}</h4>
+							<h4 class="cart-item__subttl">
+								@if (App::isLocale('ru'))
+									{{ $item['name'] }}
+								@elseif (App::isLocale('uk'))
+									{{ $item['nameUkr'] }}
+								@endif
+							</h4>
 							<div class="cart-item-txt">
-								<p class="cart-item-txt__txt">{!! $item['text'] !!}</p>
+								<p class="cart-item-txt__txt">
+									@if (App::isLocale('ru'))
+										{!! $item['text'] !!}
+									@elseif (App::isLocale('uk'))
+										{!! $item['textUkr'] !!}
+									@endif
+								</p>
 							</div>
-							{!! $item['table'] !!}
+							@if (App::isLocale('ru'))
+								{!! $item['table'] !!}
+							@elseif (App::isLocale('uk'))
+								{!! $item['tableUkr'] !!}
+							@endif
 							<div class="row cart-btn">
 								<div class="col-sm-6">
-									<a href="#calc" class="cart-item__btn anchor" data-item="{{ $item['name'] }}">Заказать</a>
+									<a href="#calc" class="cart-item__btn anchor" data-item="{{ $item['name'] }}">{{ trans('cart.btn1') }}</a>
 								</div>
 								<div class="col-sm-6">
-									<a href="#full" class="cart-item__btn fancybox">Полный прайс</a>
+									<a href="#full" class="cart-item__btn fancybox">{{ trans('cart.btn2') }}</a>
 								</div>
 							</div>
 							
@@ -137,7 +168,7 @@
 						<div class="calc">
 							<div class="row">
 								<div class="col-md-5 offset-md-1">
-									<h4 class="calc-ttl">НАПИШИТЕ НАЗВАНИЕ ИЗДЕЛИЯ ДЛЯ ПРОСЧЕТА СТОИМОСТИ</h4>
+									<h4 class="calc-ttl">{{ trans('cart.calc-ttl') }}</h4>
 								</div>
 								<div class="col-md-5">
 									<span class="calc-note">calculator</span>
@@ -148,31 +179,31 @@
 								<div class="row">
 									<div class="col-md-5 offset-md-1">
 										<div class="rline">
-											<p>Название изделия:</p>
+											<p>{{ trans('cart.calc-name') }}</p>
 											<input type="text" name="item" class="rfield calc-form__input">
 										</div>
 										<div class="rline">
-											<p>Ваше имя:</p>
+											<p>{{ trans('cart.calc-fio') }}</p>
 											<input type="text" name="name" class="rfield calc-form__input">
 										</div>
 										<div class="rline">
-											<p>Телефон/viber:</p>
+											<p>{{ trans('cart.calc-phone') }}</p>
 											<input type="text" name="phone" class="rfield calc-form__input">
 										</div>
 									</div>
 									<div class="col-md-5 offset-md-1">
 										<div class="rline">
-											<p>Ваш e-mail:</p>
+											<p>{{ trans('cart.calc-email') }}</p>
 											<input type="text" name="email" class="rfield calc-form__input">
 										</div>
 										<div class="rline">
-											<p>Прикрепить чертеж:</p>
+											<p>{{ trans('cart.calc-file') }}</p>
 											<label class="file">
 												<input type="file" name="file">
-												<span class="file__txt">загрузить</span>
+												<span class="file__txt">{{ trans('cart.calc-fileup') }}</span>
 											</label>
 										</div>
-										<button type="submit" class="btnsubmit calc-form__btn">Рассчитать</button>
+										<button type="submit" class="btnsubmit calc-form__btn">{{ trans('cart.calc-btn') }}</button>
 									</div>
 								</div>
 							</form>
@@ -186,42 +217,29 @@
 	</div>
 
 	<div class="d-none">
-		<div id="modal" class="modal">
-			<h3 class="modal-ttl">Оставьте заявку и мы просчитаем Вам стоимость</h3>
-			<form class="form_check modal-form">
-				<input type="hidden" name="title" value="Заказать">
-				<input type="hidden" name="subtitle" class="subttl">
-				<div class="rline">
-					<p>Ваше имя:</p>
-					<input type="text" name="name" class="rfield modal-form__input">
-				</div>
-				<div class="rline">
-					<p>Контактный телефон:</p>
-					<input type="text" name="phone" class="rfield modal-form__input">
-				</div>
-				<button type="submit" class="btnsubmit modal-form__btn">Заказать</button>
-			</form>
-		</div>
-
 		<div id="full" class="modal">
-			<h3 class="modal-ttl">Оставьте заявку что бы получить полный прайс продукции</h3>
+			<h3 class="modal-ttl">{{ trans('cart.modal2-ttl') }}</h3>
 			<form class="form_check modal-form" data-good="true" data-link="{{ $item['price'] }}">
 				<input type="hidden" name="title" value="Получить полный прайс">
 				<div class="rline">
-					<p>Ваше имя:</p>
+					<p>{{ trans('main.form-name') }}</p>
 					<input type="text" name="name" class="rfield modal-form__input">
 				</div>
 				<div class="rline">
-					<p>Контактный телефон:</p>
+					<p>{{ trans('main.form-phone') }}</p>
 					<input type="text" name="phone" class="rfield modal-form__input">
 				</div>
-				<button type="submit" class="btnsubmit modal-form__btn">Получить прайс</button>
+				<button type="submit" class="btnsubmit modal-form__btn">{{ trans('cart.modal2-btn') }}</button>
 			</form>
 		</div>
 	</div>
 
 	<link rel="stylesheet" href="/css/main.min.css">
-	<script src="/js/scripts.min.js"></script>
+	@if (App::isLocale('ru'))
+		<script src="/js/scripts.min.js"></script>
+	@elseif (App::isLocale('uk'))
+		<script src="/js/scripts-ukr.min.js"></script>
+	@endif
 
 </body>
 </html>

@@ -3,15 +3,19 @@
 		<div class="row align-items-center">
 			<div class="col-xl-4 offset-xl-1 col-md-6">
 				<div class="contacts-ttl clearfix">
-					<h3 class="contacts-ttl__name">Контакты</h3>
+					<h3 class="contacts-ttl__name">{{ trans('main.contacts-ttl') }}</h3>
 					<span class="contacts-ttl__note">contacts</span>
 				</div>
-				<h4 class="contacts-subttl">Адрес:</h4>
-				<p class="contacts-addr">{{ $contacts['addr'] }}</p>
+				<h4 class="contacts-subttl">{{ trans('main.contacts-addr') }}</h4>
+				@if (App::isLocale('ru'))
+					<p class="contacts-addr">{{ $contacts['addr'] }}</p>
+				@elseif (App::isLocale('uk'))
+					<p class="contacts-addr">{{ $contacts['addrUkr'] }}</p>
+				@endif
 				<a href="mailto:{{ $contacts['mail'] }}" class="contacts-eml">{{ $contacts['mail'] }}</a>
 				<div class="clearfix">
 					<div class="contacts-left">
-						<h4 class="contacts-subttl">Отдел продаж:</h4>
+						<h4 class="contacts-subttl">{{ trans('main.contacts-phone') }}</h4>
 						@if (isset($contacts['phone1']))
 							<a href="tel:+38{{ preg_replace('~[^0-9]~','',$contacts['phone1']) }}" class="contacts-phone">тел. {{ $contacts['phone1'] }}</a> 
 						@endif
@@ -70,45 +74,45 @@
 				<img src="/img/logo-white.png" alt="Verom" class="foot-logo">
 			</div>
 			<div class="col-md-2 col-sm-4 col-6 align-self-center align-self-sm-start">
-				<a href="/" class="foot-main">Главная</a>
-				<a href="/#about" class="foot-main">О нас</a>
-				<a href="/jbi" class="foot-main">Галерея ЖБИ</a>
-				<a href="#contacts" class="foot-main anchor">Контакты</a>
+				<a href="{{ localization()->getLocalizedURL(null, '/') }}" class="foot-main">{{ trans('main.foot-main1') }}</a>
+				<a href="/#about" class="foot-main">{{ trans('main.foot-main2') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'jbi') }}#gallery" class="foot-main">{{ trans('main.foot-main3') }}</a>
+				<a href="#contacts" class="foot-main anchor">{{ trans('main.foot-main4') }}</a>
 			</div>
 			<div class="w-100 d-block d-sm-none"></div>
 			<div class="col-md-2 col-sm-4 col-6">
-				<a href="/jbi" class="foot-main">ЖБИ изделия</a>
-				<a href="/jbi/3" class="foot-link">плиты перекрытия</a>
-				<a href="/jbi/11" class="foot-link">бетонный забор</a>
-				<a href="/jbi/11" class="foot-link">фундаментные блоки</a>
-				<a href="/jbi/6" class="foot-link">плита заборная</a>
-				<a href="/jbi/1" class="foot-link">бетонные кольца</a>
-				<a href="/jbi/8" class="foot-link">дорожные плиты</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'jbi') }}" class="foot-main">{{ trans('main.foot-ttl1') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'jbi') }}/3" class="foot-link">{{ trans('main.foot-link1') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'jbi') }}/11" class="foot-link">{{ trans('main.foot-link2') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'jbi') }}/7" class="foot-link">{{ trans('main.foot-link3') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'jbi') }}/11" class="foot-link">{{ trans('main.foot-link4') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'jbi') }}/1" class="foot-link">{{ trans('main.foot-link5') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'jbi') }}/2" class="foot-link">{{ trans('main.foot-link6') }}</a>
 			</div>
 			<div class="w-100 d-none d-sm-block d-md-none"></div>
 			<div class="col-md-2 col-sm-4 col-6">
-				<a href="/avtopark" class="foot-main">Аренда спецтехники</a>
-				<a href="/avtopark#catalog" class="foot-link">аренда экскаватора</a>
-				<a href="/avtopark#catalog" class="foot-link">аренда строительной техники</a>
-				<a href="/avtopark#catalog" class="foot-link">услуги спецтехники</a>
-				<a href="/avtopark#catalog" class="foot-link">аренда автокрана</a>
-				<a href="/avtopark#catalog" class="foot-link">аренда самосвала</a>
-				<a href="/avtopark#catalog" class="foot-link">аренда фронтального погрузчика</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'avtopark') }}" class="foot-main">{{ trans('main.foot-ttl2') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'avtopark') }}#catalog" class="foot-link">{{ trans('main.foot-link7') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'avtopark') }}#catalog" class="foot-link">{{ trans('main.foot-link8') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'avtopark') }}#catalog" class="foot-link">{{ trans('main.foot-link9') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'avtopark') }}#catalog" class="foot-link">{{ trans('main.foot-link10') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'avtopark') }}#catalog" class="foot-link">{{ trans('main.foot-link11') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'avtopark') }}#catalog" class="foot-link">{{ trans('main.foot-link12') }}</a>
 			</div>
 			<div class="w-100 d-block d-sm-none"></div>
 			<div class="col-md-2 col-sm-4 col-6">
-				<a href="/steel" class="foot-main">Изделия из металла</a>
-				<a href="/steel#catalog" class="foot-link">cетка кладочная</a>
-				<a href="/steel#catalog" class="foot-link">сетка металлическая</a>
-				<a href="/steel#catalog" class="foot-link">металлоконструкции</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'steel') }}" class="foot-main">{{ trans('main.foot-ttl3') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'steel') }}#catalog" class="foot-link">{{ trans('main.foot-link13') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'steel') }}#catalog" class="foot-link">{{ trans('main.foot-link14') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'steel') }}#catalog" class="foot-link">{{ trans('main.foot-link15') }}</a>
 			</div>
 			<div class="col-md-2 col-sm-4 col-6">
-				<a href="/steel#service" class="foot-main">Резка металла</a>
-				<a href="/steel#service" class="foot-link">лазерная резка металла</a>
-				<a href="/steel#service" class="foot-link">архитектурная резка</a>
-				<a href="/steel#service" class="foot-link">плазменная резка</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'steel') }}#service" class="foot-main">{{ trans('main.foot-ttl4') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'steel') }}#service" class="foot-link">{{ trans('main.foot-link16') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'steel') }}#service3" class="foot-link">{{ trans('main.foot-link17') }}</a>
+				<a href="{{ localization()->getLocalizedURL(null, 'steel') }}#service5" class="foot-link">{{ trans('main.foot-link18') }}</a>
 				<a href="http://wamp.com.ua" rel="nofollow" target="_blank" class="dev">
-					<span>Разработанно командой:</span>
+					<span>{{ trans('main.dev') }}</span>
 					<img src="/img/dev-logo.png" alt="verom">
 				</a>
 			</div>

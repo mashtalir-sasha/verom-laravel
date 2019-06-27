@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="ru">
+@if (App::isLocale('ru'))
+	<html lang="ru">
+@elseif (App::isLocale('uk'))
+	<html lang="uk">
+@endif
+
 
 <head>
 	<meta charset="utf-8">
-	<title>{{ $item['name'] }} | Verom - Киевский Завод ЖБИ</title>
-	<meta name="description" content="ЖБИ Киев - производим плиты перекрытия, бетонные кольца колодцев, бетонные заборы, фундаментные блоки и другие изделия из железобетона.">
+	<title>{{ $item['name'] }} | {{ trans('cart.title') }}</title>
+	<meta name="description" content="{{ trans('cart.description') }}">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!--
@@ -39,11 +44,11 @@
 		<div class="mob-mnu__center">
 			<div class="mob-mnu__content">
 				<ul class="mob-mnu-list">
-					<li class="mob-mnu-list__item"><a href="/">Главная</a></li>
-					<li class="mob-mnu-list__item"><a href="/jbi">Завод ЖБИ</a></li>
-					<li class="mob-mnu-list__item"><a href="/steel">Изделия из металла</a></li>
-					<li class="mob-mnu-list__item"><a href="/avtopark">Аренда техники</a></li>
-					<li class="mob-mnu-list__item"><a href="#contacts" class="anchor">Контакты</a></li>
+					<li class="mob-mnu-list__item"><a href="{{ localization()->getLocalizedURL(null, '/') }}">{{ trans('main.menu1') }}</a></li>
+					<li class="mob-mnu-list__item"><a href="{{ localization()->getLocalizedURL(null, 'jbi') }}">{{ trans('main.menu2') }}</a></li>
+					<li class="mob-mnu-list__item"><a href="{{ localization()->getLocalizedURL(null, 'steel') }}">{{ trans('main.menu3') }}</a></li>
+					<li class="mob-mnu-list__item"><a href="{{ localization()->getLocalizedURL(null, 'avtopark') }}">{{ trans('main.menu4') }}</a></li>
+					<li class="mob-mnu-list__item"><a href="#contacts" class="anchor">{{ trans('main.menu5') }}</a></li>
 				</ul>
 			</div>
 		</div>
@@ -52,8 +57,13 @@
 				<a href="tel:+38{{ preg_replace('~[^0-9]~','',$contacts['phone-top']) }}" class="mob-mnu-phone">+38 {{ $contacts['phone-top'] }}</a>
 			@endif
 			<div class="mob-mnu-lang">
-				<a href="#" class="nav-lang__link active">Рус</a>
-				<a href="#" class="nav-lang__link">Укр</a>
+				@if (App::isLocale('ru'))
+					<a href="#" class="nav-lang__link active">Рус</a>
+					<a href="/steel/{{ $item['id'] }}" class="nav-lang__link">Укр</a>
+				@elseif (App::isLocale('uk'))
+					<a href="/ru/steel/{{ $item['id'] }}" class="nav-lang__link">Рус</a>
+					<a href="#" class="nav-lang__link active">Укр</a>
+				@endif
 			</div>
 		</div>
 	</nav>
@@ -63,7 +73,7 @@
 			<div class="container">
 				<div class="row align-items-center align-items-sm-start">
 					<div class="col-lg-3 col-md-2 col-sm-3 col-6">
-						<a href="/">
+						<a href="{{ localization()->getLocalizedURL(null, '/') }}">
 							<img src="/img/logo.png" alt="Verom" class="nav-logo">
 						</a>
 					</div>
@@ -75,11 +85,11 @@
 					</div>
 					<div class="col-lg-6 col-md-7 col-sm-9 col-6 d-none d-sm-block">
 						<ul class="nav-list">
-							<li class="nav-list__item"><a href="/">Главная</a></li>
-							<li class="nav-list__item"><a href="/jbi">Завод ЖБИ</a></li>
-							<li class="nav-list__item"><a href="/steel">Изделия из металла</a></li>
-							<li class="nav-list__item"><a href="/avtopark">Аренда техники</a></li>
-							<li class="nav-list__item"><a href="#contacts" class="anchor">Контакты</a></li>
+							<li class="nav-list__item"><a href="{{ localization()->getLocalizedURL(null, '/') }}">{{ trans('main.menu1') }}</a></li>
+							<li class="nav-list__item"><a href="{{ localization()->getLocalizedURL(null, 'jbi') }}">{{ trans('main.menu2') }}</a></li>
+							<li class="nav-list__item"><a href="{{ localization()->getLocalizedURL(null, 'steel') }}">{{ trans('main.menu3') }}</a></li>
+							<li class="nav-list__item"><a href="{{ localization()->getLocalizedURL(null, 'avtopark') }}">{{ trans('main.menu4') }}</a></li>
+							<li class="nav-list__item"><a href="#contacts" class="anchor">{{ trans('main.menu5') }}</a></li>
 						</ul>
 					</div>
 					<div class="col-md-3 col-sm-4 offset-sm-8 offset-md-0 mt80 d-none d-sm-block">
@@ -87,8 +97,13 @@
 							<a href="tel:+38{{ preg_replace('~[^0-9]~','',$contacts['phone-top']) }}" class="nav-phone">+38 {{ $contacts['phone-top'] }}</a>
 						@endif
 						<div class="nav-lang">
-							<a href="#" class="nav-lang__link active">Рус</a>
-							<a href="#" class="nav-lang__link">Укр</a>
+							@if (App::isLocale('ru'))
+								<a href="#" class="nav-lang__link active">Рус</a>
+								<a href="/steel/{{ $item['id'] }}" class="nav-lang__link">Укр</a>
+							@elseif (App::isLocale('uk'))
+								<a href="/ru/steel/{{ $item['id'] }}" class="nav-lang__link">Рус</a>
+								<a href="#" class="nav-lang__link active">Укр</a>
+							@endif
 						</div>
 					</div>
 				</div>
@@ -112,24 +127,58 @@
 					</div>
 					<div class="col-md-6">
 						<div class="cart-item">
-							<h4 class="cart-item__subttl">{{ $item['name'] }}</h4>
+							<h4 class="cart-item__subttl">
+								@if (App::isLocale('ru'))
+									{{ $item['name'] }}
+								@elseif (App::isLocale('uk'))
+									{{ $item['nameUkr'] }}
+								@endif
+							</h4>
 							<div class="row align-items-center">
 								<div class="col-sm-6">
 									<ul class="cart-item-list">
-										<li class="cart-item-list__item">{{ $item['item1'] }}</li>
-										<li class="cart-item-list__item">{{ $item['item2'] }}</li>
+										<li class="cart-item-list__item">
+											@if (App::isLocale('ru'))
+												{{ $item['item1'] }}
+											@elseif (App::isLocale('uk'))
+												{{ $item['item1Ukr'] }}
+											@endif
+										</li>
+										<li class="cart-item-list__item">
+											@if (App::isLocale('ru'))
+												{{ $item['item2'] }}
+											@elseif (App::isLocale('uk'))
+												{{ $item['item2Ukr'] }}
+											@endif
+										</li>
 									</ul>
-									<p class="cart-item__price">{{ $item['price'] }}</p>
+									<p class="cart-item__price">
+										@if (App::isLocale('ru'))
+												{{ $item['price'] }}
+											@elseif (App::isLocale('uk'))
+												{{ $item['priceUkr'] }}
+											@endif
+									</p>
 								</div>
 								<div class="col-sm-6">
-									{!! $item['table'] !!}
+									@if (App::isLocale('ru'))
+										{!! $item['table'] !!}
+									@elseif (App::isLocale('uk'))
+										{!! $item['tableUkr'] !!}
+									@endif
 								</div>
 							</div>
 							<div class="cart-item-txt">
-								<h4 class="cart-item-txt__ttl">Описание:</h4>
-								<p class="cart-item-txt__txt">{!! $item['text'] !!}</p>
+								<h4 class="cart-item-txt__ttl">{{ trans('cart.item') }}</h4>
+								<p class="cart-item-txt__txt">
+									@if (App::isLocale('ru'))
+										{!! $item['text'] !!}
+									@elseif (App::isLocale('uk'))
+										{!! $item['textUkr'] !!}
+									@endif
+								</p>
 							</div>
-							<a href="#modal" class="cart-item__btn fancybox" data-item="{{ $item['name'] }}">Просчет стоимости</a>
+							<a href="#modal" class="cart-item__btn fancybox" data-item="{{ $item['name'] }}">{{ trans('cart.btn3') }}</a>
 						</div>
 					</div>
 				</div>
@@ -141,25 +190,29 @@
 
 	<div class="d-none">
 		<div id="modal" class="modal">
-			<h3 class="modal-ttl">Оставьте заявку и мы просчитаем Вам стоимость</h3>
+			<h3 class="modal-ttl">{{ trans('avto.modal1-ttl') }}</h3>
 			<form class="form_check modal-form" data-good="true" data-link="{{ $item['link'] }}">
 				<input type="hidden" name="title" value="Просчет стоимости">
 				<input type="hidden" name="subtitle" class="subttl">
 				<div class="rline">
-					<p>Ваше имя:</p>
+					<p>{{ trans('main.form-name') }}</p>
 					<input type="text" name="name" class="rfield modal-form__input">
 				</div>
 				<div class="rline">
-					<p>Контактный телефон:</p>
+					<p>{{ trans('main.form-phone') }}</p>
 					<input type="text" name="phone" class="rfield modal-form__input">
 				</div>
-				<button type="submit" class="btnsubmit modal-form__btn">Получить просчет</button>
+				<button type="submit" class="btnsubmit modal-form__btn">{{ trans('avto.modal1-btn') }}</button>
 			</form>
 		</div>
 	</div>
 
 	<link rel="stylesheet" href="/css/main.min.css">
-	<script src="/js/scripts.min.js"></script>
+	@if (App::isLocale('ru'))
+		<script src="/js/scripts.min.js"></script>
+	@elseif (App::isLocale('uk'))
+		<script src="/js/scripts-ukr.min.js"></script>
+	@endif
 
 </body>
 </html>

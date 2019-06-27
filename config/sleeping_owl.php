@@ -170,7 +170,7 @@ return [
          * See http://docs.ckeditor.com/#!/api/CKEDITOR.config
          */
         'ckeditor'  => [
-            'defaultLanguage' => config('app.locale'),
+            'defaultLanguage' => 'ru',
             'height'       => 200,
             'extraPlugins' => 'uploadimage,image2,justify,youtube,uploadfile',
             /*

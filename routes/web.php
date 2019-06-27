@@ -11,7 +11,7 @@
 |
 */
 
-//Route::localizedGroup(function () {
+Route::localizedGroup(function () {
 	Route::get('/', function () {
 	    return view('main', [
 	        'contacts' => \App\Contacts::find(1),
@@ -51,7 +51,7 @@
     });
 
     Route::match(['get', 'post'], 'steel/{id}', 'SteelController@showDetails')->where(['id' => '[0-9]+']);
-//});
+});
 
 Auth::routes();
 

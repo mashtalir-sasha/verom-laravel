@@ -21,19 +21,30 @@ AdminSection::registerModel(Jbicatalogs::class, function (ModelConfiguration $mo
         $form = AdminForm::panel();
         $form->setHtmlAttribute('enctype', 'multipart/form-data');
 
+        $tabs = AdminDisplay::tabbed([
+            'Русский' => new \SleepingOwl\Admin\Form\FormElements([
+                AdminFormElement::text('name', 'Заголовок')->required(),
+                AdminFormElement::textarea('text', 'Описание (перенос строки через <br>)')->required(),
+                AdminFormElement::wysiwyg('table', 'Таблица')->required(),
+            ]),
+            'Українська' => new \SleepingOwl\Admin\Form\FormElements([
+                AdminFormElement::text('nameUkr', 'Заголовок')->required(),
+                AdminFormElement::textarea('textUkr', 'Опис (перенос строки через <br>)')->required(),
+                AdminFormElement::wysiwyg('tableUkr', 'Таблиця')->required(),
+            ]),
+        ]);
+
         $form->addBody([
             AdminFormElement::columns()
-                ->addColumn(function () {
+                ->addColumn(function () use ($tabs) {
                     return [
-                        AdminFormElement::text('numb', 'Номер п/п в формате ХХ')->required(),
-                        AdminFormElement::text('name', 'Заголовок')->required(),
-                        AdminFormElement::text('price', 'Ссылка на прайс')->required(),
-                        AdminFormElement::textarea('text', 'Описание (перенос строки через <br>)')->required(),
+                        $tabs
                     ];
                 })->addColumn(function () {
                     return [
                         AdminFormElement::image('image', 'Фото')->required(),
-                        AdminFormElement::wysiwyg('table', 'Таблица')->required(),
+                        AdminFormElement::text('numb', 'Номер п/п в формате ХХ')->required(),
+                        AdminFormElement::text('price', 'Ссылка на прайс')->required(),
                     ];
                 }),
         ]);
