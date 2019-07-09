@@ -44,6 +44,7 @@ return [
     'contacts-ttl' => 'КОНТАКТИ',
     'contacts-addr' => 'Адреса:',
     'contacts-phone' => 'Відділ продажу:',
+    'contacts-logistic' => 'Відділ логістики:',
 
     'foot-main1' => 'Головна',
     'foot-main2' => 'Про нас',

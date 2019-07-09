@@ -138,7 +138,7 @@
 								<div class="row">
 									@foreach ($catalog as $item)
 										<div class="col-md-3 col-sm-6">
-											<div class="catalog-item">
+											<a href="{{ localization()->getLocalizedURL(null, 'steel') }}/{{ $item['id'] }}" class="catalog-item" style="display:block;color:#000">
 												<div class="catalog-item__ttl">
 													<span>{{ $item['numb'] }} /</span>
 													@if (App::isLocale('ru'))
@@ -150,8 +150,8 @@
 												<div class="catalog-item__img">
 													<img src="{{ '/images/uploads/small/'.basename($item['image']) }}" alt="verom">
 												</div>
-												<a href="{{ localization()->getLocalizedURL(null, 'steel') }}/{{ $item['id'] }}" class="catalog-item__btn">{{ trans('steel.catalog-btn') }}</a>
-											</div>
+												<button href="{{ localization()->getLocalizedURL(null, 'steel') }}/{{ $item['id'] }}" class="catalog-item__btn" style="cursor:pointer">{{ trans('steel.catalog-btn') }}</button>
+											</a>
 										</div>
 										@if($loop->iteration % 12 == 0 && !$loop->last)
 											</div></div></div></div></div>
@@ -171,7 +171,7 @@
 					<div class="catalog-slider_xs">
 						@foreach ($catalog as $item)
 							<div class="col">
-								<div class="catalog-item">
+								<a href="{{ localization()->getLocalizedURL(null, 'steel') }}/{{ $item['id'] }}" class="catalog-item" style="display:block;color:#000">
 									<div class="catalog-item__ttl">
 										<span>{{ $item['numb'] }} /</span>
 										@if (App::isLocale('ru'))
@@ -183,7 +183,7 @@
 									<div class="catalog-item__img">
 										<img src="{{ '/images/uploads/small/'.basename($item['image']) }}" alt="verom">
 									</div>
-									<a href="{{ localization()->getLocalizedURL(null, 'steel') }}/{{ $item['id'] }}" class="catalog-item__btn">{{ trans('steel.catalog-btn') }}</a>
+									<button href="{{ localization()->getLocalizedURL(null, 'steel') }}/{{ $item['id'] }}" class="catalog-item__btn" style="cursor:pointer">{{ trans('steel.catalog-btn') }}</button>
 								</div>
 							</div>
 						@endforeach

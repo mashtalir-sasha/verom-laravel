@@ -27,6 +27,8 @@ class CreateContactsTable extends Migration
             $table->text('phone3')->nullable();
             $table->text('phone4')->nullable();
             $table->text('phone5')->nullable();
+            $table->text('phone-logistic')->nullable();
+            $table->text('mail-logistic')->nullable();
             $table->text('longitude');
             $table->text('latitude');
             $table->timestamps();

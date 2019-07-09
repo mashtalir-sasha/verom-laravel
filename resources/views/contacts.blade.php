@@ -31,6 +31,11 @@
 						@if (isset($contacts['phone5']))
 							<a href="tel:+38{{ preg_replace('~[^0-9]~','',$contacts['phone5']) }}" class="contacts-phone">тел. {{ $contacts['phone5'] }}</a>
 						@endif
+						<h4 class="contacts-subttl">{{ trans('main.contacts-logistic') }}</h4>
+						@if (isset($contacts['phone-logistic']))
+							<a href="tel:+38{{ preg_replace('~[^0-9]~','',$contacts['phone-logistic']) }}" class="contacts-phone">тел. {{ $contacts['phone-logistic'] }}</a>
+						@endif
+						<a href="mailto:{{ $contacts['mail-logistic'] }}" class="contacts-eml">{{ $contacts['mail-logistic'] }}</a>
 					</div>
 					<div class="contacts-right">
 						@if (isset($contacts['facebook']))

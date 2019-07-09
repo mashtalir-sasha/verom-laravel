@@ -134,7 +134,7 @@
 						<div class="row">
 							@foreach ($catalog as $item)
 								<div class="col-md-3 col-sm-6">
-									<div class="jbi-item">
+									<a href="{{ localization()->getLocalizedURL(null, 'jbi') }}/{{ $item['id'] }}" class="jbi-item" style="display:block;color:#000">
 										<div class="jbi-item__ttl">
 											<span>{{ $item['numb'] }} /</span>
 											@if (App::isLocale('ru'))
@@ -146,8 +146,8 @@
 										<div class="jbi-item__img">
 											<img src="{{ '/images/uploads/small/'.basename($item['image']) }}" alt="verom">
 										</div>
-										<a href="{{ localization()->getLocalizedURL(null, 'jbi') }}/{{ $item['id'] }}" class="jbi-item__btn">{{ trans('jbi.catalog-btn') }}</a>
-									</div>
+										<button href="{{ localization()->getLocalizedURL(null, 'jbi') }}/{{ $item['id'] }}" class="jbi-item__btn" style="cursor:pointer">{{ trans('jbi.catalog-btn') }}</button>
+									</a>
 								</div>
 							@endforeach
 						</div>
@@ -157,7 +157,7 @@
 					<div class="jbi-slider">
 						@foreach ($catalog as $item)
 							<div class="col">
-								<div class="jbi-item">
+								<a href="{{ localization()->getLocalizedURL(null, 'jbi') }}/{{ $item['id'] }}" class="jbi-item" style="display:block;color:#000">
 									<div class="jbi-item__ttl">
 										<span>{{ $item['numb'] }} /</span>
 										@if (App::isLocale('ru'))
@@ -169,8 +169,8 @@
 									<div class="jbi-item__img">
 										<img src="{{ '/images/uploads/small/'.basename($item['image']) }}" alt="verom">
 									</div>
-									<a href="{{ localization()->getLocalizedURL(null, 'jbi') }}/{{ $item['id'] }}" class="jbi-item__btn">{{ trans('jbi.catalog-btn') }}</a>
-								</div>
+									<button href="{{ localization()->getLocalizedURL(null, 'jbi') }}/{{ $item['id'] }}" class="jbi-item__btn" style="cursor:pointer">{{ trans('jbi.catalog-btn') }}</button>
+								</a>
 							</div>
 						@endforeach
 					</div>

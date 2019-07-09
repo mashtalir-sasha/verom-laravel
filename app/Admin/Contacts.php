@@ -38,6 +38,7 @@ AdminSection::registerModel(Contacts::class, function (ModelConfiguration $model
                     return [
                         $tabs,
                         AdminFormElement::text('mail', 'Email')->required(),
+                        AdminFormElement::text('mail-logistic', 'Email Логистики')->required(),
                         AdminFormElement::text('facebook', 'Facebook'),
                         AdminFormElement::text('youtube', 'YouTube'),
                         AdminFormElement::text('instagram', 'Instagram'),
@@ -50,6 +51,7 @@ AdminSection::registerModel(Contacts::class, function (ModelConfiguration $model
                         AdminFormElement::text('phone3', 'Телефон 3 (ХХХ) ХХХ-ХХ-ХХ'),
                         AdminFormElement::text('phone4', 'Телефон 4 (ХХХ) ХХХ-ХХ-ХХ'),
                         AdminFormElement::text('phone5', 'Телефон 5 (ХХХ) ХХХ-ХХ-ХХ'),
+                        AdminFormElement::text('phone-logistic', 'Телефон Логистики (ХХХ) ХХХ-ХХ-ХХ'),
                     ];
                 })->addColumn(function () {
                     return [
